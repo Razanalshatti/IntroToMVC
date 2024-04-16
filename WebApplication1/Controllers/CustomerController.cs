@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
         }
         public IActionResult Details(int id)
         {
-            var customer = CustomerData.Customers[id];
+            var customer = CustomerData.Customers.First(x => x.id == id);
             if (customer == null)
             {
                 return NotFound();
