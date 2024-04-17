@@ -24,10 +24,12 @@ namespace WebApplication1.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Register(IFormCollection form)
+        public IActionResult Register(AddCustomerForm form)
         {
-            var name = form["name"];
-            var email = form["email"];
+            var name = form.name;
+            var email = form.email;
+            var phone = form.phone;
+            var country = form.country;
             CustomerData.Customers.Add(new Customer { name = name, email = email, id = 10 });
             return RedirectToAction("Index");
             

@@ -1,10 +1,10 @@
 ﻿
 <h1>Add New Customer</h1>
-
+@model AddCustomerForm
 <form></form>
 @using (Html.BeginForm("Register","Customer",FormMethod.Post))
 {
-    <label>Name</label>
+   @*  <label>Name</label>
     <input type="text" name="Name" />
 
     <label>Email</label>
@@ -14,7 +14,9 @@
     <input type="phone" name="Phone" />
 
     <label>Country</label>
-    <input type="country" name="Country" />
+    <input type="country" name="Country" /> *@
+
+    @Html.EditorForModel() // work as simplify form for the wriiten code above
 
     <button type="submit" class="btn btn-success">Add</button>
 
