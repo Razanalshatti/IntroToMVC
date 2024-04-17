@@ -18,6 +18,20 @@ namespace WebApplication1.Controllers
             }
             return View(customer);
         }
-
+        [HttpGet]
+        public IActionResult Register() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(IFormCollection form)
+        {
+            var name = form["name"];
+            var email = form["email"];
+            CustomerData.Customers.Add(new Customer { name = name, email = email, id = 10 });
+            return RedirectToAction("Index","Customer");
+            return View();
+        }
+        
     }
 }
