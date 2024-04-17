@@ -26,12 +26,16 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public IActionResult Register(AddCustomerForm form)
         {
-            var name = form.name;
-            var email = form.email;
-            var phone = form.phone;
-            var country = form.country;
-            CustomerData.Customers.Add(new Customer { name = name, email = email, id = 10 });
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var name = form.name;
+                var email = form.email;
+                var phone = form.phone;
+                var country = form.country;
+                CustomerData.Customers.Add(new Customer { name = name, email = email, id = 100, phone = phone, country = country });
+                return RedirectToAction("Index");
+            }
+            return View();
             
         }
         
