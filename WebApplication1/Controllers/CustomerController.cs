@@ -29,8 +29,8 @@ namespace WebApplication1.Controllers
             var name = form["name"];
             var email = form["email"];
             CustomerData.Customers.Add(new Customer { name = name, email = email, id = 10 });
-            return RedirectToAction("Index","Customer");
-            return View();
+            return RedirectToAction("Index");
+            
         }
         
     }
