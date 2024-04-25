@@ -19,7 +19,7 @@ namespace WebApplication1.Models
         [Required]
         [Display(Name = "Customer Country")]
         public string country { get; set; }
-
+        
         //[DataType(DataType.Date)]
         //[Display(Name = "Date of Birth")]
         //public DateOnly Dob { get; set; }
